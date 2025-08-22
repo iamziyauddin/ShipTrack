@@ -69,6 +69,7 @@ const ShipsList = () => {
           Next
         </button>
       </div>
+      </div>
     </div>
   );
 };
