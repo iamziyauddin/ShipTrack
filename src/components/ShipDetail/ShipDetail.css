@@ -1,0 +1,45 @@
+.ship-detail {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.detail-section {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.detail-section h2 {
+  color: #646cff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.detail-section p {
+  margin: 0.5rem 0;
+}
+
+.detail-section strong {
+  color: #888;
+}
+
+.roles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.roles-list li {
+  background-color: #2a2a2a;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
