@@ -6,10 +6,14 @@ export default defineConfig({
   plugins: [react()],
   base: "/ShipTrack/",
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
     rollupOptions: {
-      input: {
-        main: './index.html',
-      },
-    },
-  },
+      input: '/index.html',
+      output: {
+        manualChunks: undefined
+      }
+    }
+  }
 });
