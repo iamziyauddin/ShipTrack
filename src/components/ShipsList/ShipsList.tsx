@@ -35,40 +35,43 @@ const ShipsList = () => {
         </div>
         <div className="ships-grid">
           {currentShips.map((ship) => (
-          <Link
-            to={`/ship/${ship.legacy_id}`}
-            key={ship.legacy_id}
-            className="ship-card"
+            <Link
+              to={`/ship/${ship.legacy_id}`}
+              key={ship.legacy_id}
+              className="ship-card"
+            >
+              <h2>{ship.legacy_id}</h2>
+              <div className="ship-info">
+                <p>
+                  <strong>Type:</strong> {ship.type}
+                </p>
+                <p>
+                  <strong>Home Port:</strong> {ship.home_port}
+                </p>
+                <p>
+                  <strong>Status:</strong> {ship.status || "N/A"}
+                </p>
+                <p>
+                  <strong>Roles:</strong> {ship.roles.join(", ")}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="pagination">
+          <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+            Previous
+          </button>
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
           >
-            <h2>{ship.legacy_id}</h2>
-            <div className="ship-info">
-              <p>
-                <strong>Type:</strong> {ship.type}
-              </p>
-              <p>
-                <strong>Home Port:</strong> {ship.home_port}
-              </p>
-              <p>
-                <strong>Status:</strong> {ship.status || "N/A"}
-              </p>
-              <p>
-                <strong>Roles:</strong> {ship.roles.join(", ")}
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
-      <div className="pagination">
-        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-          Previous
-        </button>
-        <span>
-          Page {currentPage} of {totalPages}
-        </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          Next
-        </button>
-      </div>
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
